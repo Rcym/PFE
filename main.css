@@ -12,6 +12,8 @@ body {
     --background_Dark : rgb(87, 87, 87);
     --background_Neutral : rgb(143, 143, 143);
     --background_Light : rgb(241, 241, 241);
+
+    --common_border_radius : 10px;
 }
 
 
@@ -86,6 +88,8 @@ body {
 .mainPart {
     background-color: var(--background_Light);
     width: 60%;
+    display: flex;
+    flex-direction: column;
 }
 
 .mainPart .Top {
@@ -93,6 +97,7 @@ body {
     margin: 10px;
     border-radius: 10px;
     position: relative;
+    height: 12%;
 }
 
 .mainPart .Top h1 {
@@ -124,6 +129,257 @@ body {
 .mainPart .Top .filtreDiv button:hover {
     background-color: var(--background_Neutral);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.msgSection {
+    /*height: 83%;*/
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 1;
+    height: 80%;
+}
+
+.mainPart .contactSection {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 30%;
+    margin: 10px;
+    border-radius: var(--common_border_radius);
+    padding: 10px;
+    overflow-y: auto;
+    flex-grow: 1;
+    flex-basis: 0;
+    box-sizing: border-box;
+}
+
+.mainPart .contactSection::-webkit-scrollbar {
+    width: 5px; /* width of the scrollbar */
+    border-radius: 10px;
+}
+
+.mainPart .contactSection::-webkit-scrollbar-track {
+    height: 20%;
+    background: rgba(0, 0, 0, 0);
+}
+
+.mainPart .contactSection::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.TPTDmoduleSection {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: var(--common_border_radius);
+    margin-bottom: 10px;
+    max-height: 200px;
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+}
+
+.TPTDmoduleSection h3 {
+    margin: 0px;
+    padding: 10px 0px 5px 15px;
+    user-select: none;
+}
+
+.TPTDmoduleSection > .arrow {
+    position: absolute;
+    top: -5px;
+    right: 10px;
+    color: white;
+    font-weight: bold;
+    transform: rotate(180deg);
+    cursor: pointer;
+    user-select: none;
+}
+
+.TPTDmoduleSection .moduleTPTD {
+    display: flex;
+    opacity: 0;
+}
+
+.TPTDmoduleSection .moduleTPTD h4 {
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 0px;
+    padding: 0px;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.TPTDmoduleSection .moduleTPTD p {
+    margin: 0px;
+    height: 100%;
+    align-self: center;
+}
+
+.TPTDmoduleSection .moduleTPTD .arrow {
+    margin-left: auto;
+    margin-right: 10px;
+    font-weight: bold;
+    color: white;
+    user-select: none;
+}
+
+.closed {
+    overflow: hidden;
+    max-height: 40px;
+    cursor: pointer;
+}
+
+.closed .arrow {
+    transform: rotate(0deg);
+}
+
+@keyframes TPTD_fadeIn {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+.animateFadeIn {
+    animation: TPTD_fadeIn 0.5s forwards 0.15s;
+}
+
+.TPTDmoduleSection .moduleTPTD:nth-of-type(1) {
+    animation-delay: 0.1s;
+}
+.TPTDmoduleSection .moduleTPTD:nth-of-type(2) {
+    animation-delay: 0.15s;
+}
+.TPTDmoduleSection .moduleTPTD:nth-of-type(3) {
+    animation-delay: 0.2s;
+}
+
+
+            /*    MSG TEXT SECTION    */
+
+
+.msgTxtSection {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 70%;
+    margin: 10px;
+    border-radius: var(--common_border_radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.msgTxtSection h3 {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    font-size: 22px;
+    margin: 0px;
+    padding: 10px 0px 7px 20px;
+}
+
+.msgTxtSection .msgWritingSection {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    padding-bottom: 5px;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 75%);
+}
+
+.msgTxtSection .msgWritingSection input[type="text"] {
+    font-size: 20px;
+    padding: 10px 10px;
+    margin: 10px;
+    border: none;
+    border-radius: var(--common_border_radius);
+    flex-grow: 1;
+}
+
+.msgTxtSection .msgWritingSection input[type="text"]:focus {
+    outline: none;
+}
+
+.msgTxtSection .msgWritingSection button {
+    border: none;
+    border-radius: var(--common_border_radius);
+    margin: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 10px;
+}
+
+
+.msgTxtSection .msgContainer {
+    flex-grow: 1;
+}
+
+.msgTxtSection .msgContainer .msgLine {
+    /*background-color: rgba(0, 0, 0, 0.1);*/
+    display: flex;
+}
+
+.msgTxtSection .msgContainer .msgLine .msgerIcon {
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin: 10px;
+}
+
+.msgTxtSection .msgContainer .msgLine .msgTxt {
+    max-width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+}
+
+.msgTxtSection .msgContainer .msgLine .msgTxt p {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: var(--common_border_radius);
+    margin: 5px 0px;
+    width: fit-content;
+}
+
+.ownMsgLine {
+    flex-direction: row-reverse;
+}
+
+.msgTxtSection .msgContainer .ownMsgLine .msgTxt {
+    align-items: flex-end;
+}
+
+.msgTxtSection .msgContainer .ownMsgLine .msgTxt p {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
