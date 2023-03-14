@@ -325,6 +325,24 @@ body {
 
 .msgTxtSection .msgContainer {
     flex-grow: 1;
+    overflow-y: scroll;
+}
+
+/*  msg container scrollbar */
+
+.msgTxtSection .msgContainer::-webkit-scrollbar {
+    width: 5px; /* width of the scrollbar */
+    border-radius: 10px;
+}
+
+.msgTxtSection .msgContainer::-webkit-scrollbar-track {
+    height: 20%;
+    background: rgba(0, 0, 0, 0);
+}
+
+.msgTxtSection .msgContainer::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
 }
 
 .msgTxtSection .msgContainer .msgLine {
@@ -368,6 +386,48 @@ body {
     color: white;
 }
 
+.msgTxtSection .msgContainer .msgLineVide {
+    height: 70px;
+}
+
+
+.msgTxtSectionTop {
+    display: flex;
+    position: relative;
+    width: 100%;
+    /* height: 50px; */
+    background-color: var(--background_Neutral);
+}
+
+.msgTxtSectionTop select {
+    margin: 3px;
+    border-radius: var(--common_border_radius);
+    padding: 5px;
+    font-size: 18px;
+    background-color: var(--background_Dark);
+    color: white;
+    /* border: 1px solid white; */
+}
+
+.msgTxtSectionTop select:focus {
+    outline: none;
+}
+
+.msgTxtSectionTop option {
+    padding: 5px;
+    font-size: 18px;
+}
+
+.msgTxtSectionTop h3 {
+    padding: 12px 5px 5px 5px;
+    background-color: transparent;
+}
+
+.msgTxtSectionTop p {
+    position: absolute;
+    right: 20px;
+    padding: 0px
+}
 
 
 
@@ -471,5 +531,8 @@ body {
     padding: 0px 0px 10px 10px;
     margin: 0px;
 }
+
+
+
 
 

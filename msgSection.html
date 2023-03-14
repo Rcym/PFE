@@ -46,14 +46,14 @@
 
     <div class="mainPart">
         <div class="Top">
-            <h1>Page D'acceuille</h1>
-            <div class="filtreDiv">
+            <h1>Messagerie instantannée</h1>
+            <!-- <div class="filtreDiv">
                 <p>Filtres : </p>
                 <button>General</button>
                 <button>Cours</button>
                 <button>TD</button>
                 <button>TP</button>
-            </div>
+            </div> -->
         </div>
 
         <div class="msgSection">
@@ -159,7 +159,16 @@
 
 
             <div class="msgTxtSection">
-                <h3>Module 1</h3>
+                <div class="msgTxtSectionTop">
+                    <select name="" id="">
+                        <option value="Cours">Cours</option>
+                        <option value="TD">TD</option>
+                        <option value="TP">TP</option>
+                    </select>
+                    <h3>Module 1</h3>
+                    <p>mr xxxxxx</p>
+                </div>
+
                 <div class="msgContainer">
                     <div class="msgLine">
                         <div class="msgerIcon"></div>
@@ -169,22 +178,52 @@
                             <p>bla blaaa </p>
                         </div>
                     </div>
+                    
+                    <div class="msgLine ownMsgLine">
+                        <div class="msgerIcon"></div>
+                        <div class="msgTxt">
+                            <p>bla bla bla bla b bla bla bla bla bla </p>
+                            <p>bla bla bla bla b bla bla bla bla bla </p>
+                            <p>bla bla bla bla b bla bla bla bla blabla bla bla bla b bla bla bla bla bla bla bla bla bla b bla bla bla bla bla  </p>
+                            <p>bla bla bla bla b bla bla bla bla bla </p>
+                            <p>bla bla bla ? </p>
+                        </div>
+                    </div>
+                    
+                    <div class="msgLine">
+                        <div class="msgerIcon"></div>
+                        <div class="msgTxt">
+                            <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                            <p>bla blaaa </p>
+                        </div>
+                    </div>
 
                     <div class="msgLine ownMsgLine">
                         <div class="msgerIcon"></div>
                         <div class="msgTxt">
+                            <p>bla bla bla bla b bla bla bla bla blabla bla bla bla b bla bla bla bla bla bla bla bla bla b bla bla bla bla bla  </p>
                             <p>bla bla bla bla b bla bla bla bla bla </p>
                             <p>bla bla bla ? </p>
                         </div>
                     </div>
 
+                    <div class="msgLine">
+                        <div class="msgerIcon"></div>
+                        <div class="msgTxt">
+                            <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+                            <p>bla blaaa </p>
+                        </div>
+                    </div>
+                    
+                    <div class="msgLineVide"></div>
+                    
                     
                 </div>
 
                 <div class="msgWritingSection">
-                    <input type="text" placeholder=". . .">
-                    <button>PJ</button>
-                    <button>Envoyer ></button>
+                    <input type="text" placeholder="Aa" id="textEntry">
+                    <button id="PJbtn">PJ</button>
+                    <button id="sendBtn">Envoyer ></button>
                 </div>
             </div>
         </div>
