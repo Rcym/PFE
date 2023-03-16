@@ -348,6 +348,7 @@ body {
 .msgTxtSection .msgContainer .msgLine {
     /*background-color: rgba(0, 0, 0, 0.1);*/
     display: flex;
+    margin: 10px 0px;
 }
 
 .msgTxtSection .msgContainer .msgLine .msgerIcon {
@@ -369,7 +370,7 @@ body {
     background-color: rgba(0, 0, 0, 0.1);
     padding: 10px;
     border-radius: var(--common_border_radius);
-    margin: 5px 0px;
+    margin: 2px 0px;
     width: fit-content;
 }
 
@@ -384,21 +385,30 @@ body {
 .msgTxtSection .msgContainer .ownMsgLine .msgTxt p {
     background-color: rgba(0, 0, 0, 0.2);
     color: white;
+    margin-right: 15px;
 }
 
 .msgTxtSection .msgContainer .msgLineVide {
     height: 70px;
 }
 
+.msgTxtSection .msgContainer .ownMsgLine .msgerIcon { /* deleting own msg icon */
+    display: none;
+}
 
-.msgTxtSectionTop {
+
+.firstMsg {
+    justify-content: center;
+    margin: 20px;
+}
+
+
+/* .msgTxtSectionTop {
     display: flex;
     position: relative;
     width: 100%;
-    /* height: 50px; */
     background-color: var(--background_Neutral);
 }
-
 .msgTxtSectionTop select {
     margin: 3px;
     border-radius: var(--common_border_radius);
@@ -406,27 +416,62 @@ body {
     font-size: 18px;
     background-color: var(--background_Dark);
     color: white;
-    /* border: 1px solid white; */
 }
-
 .msgTxtSectionTop select:focus {
     outline: none;
 }
-
 .msgTxtSectionTop option {
     padding: 5px;
     font-size: 18px;
 }
-
 .msgTxtSectionTop h3 {
     padding: 12px 5px 5px 5px;
     background-color: transparent;
 }
-
 .msgTxtSectionTop p {
     position: absolute;
     right: 20px;
     padding: 0px
+} */
+
+.msgTxtSectionTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: var(--background_Neutral);
+}
+
+.msgTxtSectionTop h3 {
+    background-color: transparent;
+}
+
+.msgTxtSectionTop .TPTD_select {
+    height: fit-content;
+    padding: 5px 6px;
+    margin: 3px;
+    border-radius: var(--common_border_radius);
+    background-color: var(--background_Dark);
+}
+
+.msgTxtSectionTop .TPTD_select .TPTDselectBtn {
+    padding: 6px 10px;
+    border: none;
+    background-color: transparent;
+    color: white;
+}
+
+.msgTxtSectionTop .TPTD_select .selected_TPTD {
+    background-color: var(--background_Light);
+    border-radius: var(--common_border_radius);
+    color: black;
+    font-weight: bold;
+}
+
+.msgTxtSectionTop p {
+    padding: 5px;
+    margin: 10px;
+    color: whitesmoke;
 }
 
 
