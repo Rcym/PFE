@@ -14,6 +14,8 @@ body {
     --background_Light : rgb(241, 241, 241);
 
     --common_border_radius : 10px;
+
+    --TopBarSize : 70px
 }
 
 
@@ -33,10 +35,12 @@ body {
     border-radius: 5px;
     display: flex;
     justify-content: center;
+    height: var(--TopBarSize);
 }
 
 .leftMenu .titleDiv h1 {
     color: white;
+    margin: auto;
 }
 
 .leftMenu h3 {
@@ -97,13 +101,13 @@ body {
     margin: 10px;
     border-radius: 10px;
     position: relative;
-    height: 12%;
+    height: var(--TopBarSize);
 }
 
 .mainPart .Top h1 {
     margin: 0px;
     color: white;
-    padding: 10px 0px 40px 15px;
+    padding: 10px 0px 20px 15px;
 }
 
 .mainPart .Top .filtreDiv {
@@ -128,6 +132,12 @@ body {
 
 .mainPart .Top .filtreDiv button:hover {
     background-color: var(--background_Neutral);
+}
+
+/*   mainGridWrapper   */
+.mainGridWrapper {
+    display: flex;
+    width: 80%;
 }
 
 
@@ -452,6 +462,18 @@ body {
     margin: 3px;
     border-radius: var(--common_border_radius);
     background-color: var(--background_Dark);
+    position: relative;
+}
+
+.msgTxtSectionTop .TPTD_select .indic{
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    background-color: var(--background_Light);
+    border-radius: var(--common_border_radius);
+    top: 3px;
+    transition: transform 0.2s linear;
+    z-index: 0;
 }
 
 .msgTxtSectionTop .TPTD_select .TPTDselectBtn {
@@ -459,14 +481,27 @@ body {
     border: none;
     background-color: transparent;
     color: white;
+    width: 50px;
+    z-index: 99;
+    position: relative;
 }
 
 .msgTxtSectionTop .TPTD_select .selected_TPTD {
-    background-color: var(--background_Light);
+    /* background-color: var(--background_Light); */
     border-radius: var(--common_border_radius);
     color: black;
     font-weight: bold;
 }
+.msgTxtSectionTop .TPTDselectBtn:nth-of-type(1).selected_TPTD ~ .indic{
+    transform: translateX(calc(4px)) scaleX(1.1);
+}
+.msgTxtSectionTop .TPTDselectBtn:nth-of-type(2).selected_TPTD ~ .indic{
+    transform: translateX(calc(56px*1));
+}
+.msgTxtSectionTop .TPTDselectBtn:nth-of-type(3).selected_TPTD ~ .indic{
+    transform: translateX(calc(55px*2));
+}
+
 
 .msgTxtSectionTop p {
     padding: 5px;
@@ -476,6 +511,111 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
+    /*   Profile Div   */
+
+.profileDiv {
+    position: relative;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    height: var(--TopBarSize);
+}
+
+.profileDiv > * {
+    margin: 0px;
+}
+
+.profileDiv .profilePicDiv {
+    width: 60px;
+    height: 60px;
+    background-image: url(https://www.w3schools.com/howto/img_avatar.png);
+    border-radius: 50%;
+    margin: 5px;
+    aspect-ratio: 1 / 1;
+}
+
+.profileDiv .profileTextDiv {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profileDiv .profileTextDiv p {
+    margin: 0px 0px 1px 7px
+} 
+
+.profileDiv .profileTextDiv button {
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: var(--common_border_radius);
+    padding: 2px 0px;
+}
+
+.profileDiv .profileTextDiv button:hover {
+    background-color: var(--background_Dark);
+    color: white;
+}
+
+/*   Profile subMenu   */
+.profileSubMenu {
+    position: absolute;
+    background-color: var(--background_Dark);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: var(--common_border_radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    right: 0px;
+    left: 0px;
+    top: 80px;
+    overflow: hidden;
+    z-index: 10;
+    transform: translateY(-200px);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out 0.1s;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.profileSubMenu .delimiteur {
+    height: 2px;
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 5px 0px;
+}
+
+.profileSubMenu a {
+    width: 100%;
+    text-decoration: none;
+    color: white;
+}
+
+.profileSubMenu a p {
+    margin: 10px 20px;
+}
+
+.profileSubMenu a:hover {
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+.profileSubMenuSHOWN {
+    transform: translateY(0px);
+    opacity: 1;
+    pointer-events: all;
+}
 
 
 
@@ -502,7 +642,12 @@ body {
     align-items: center;
 }
 
-.rightPart .profileDiv {
+.rightPart .profileDiv {        /*   specific to right part   */
+    width: 90%;
+    margin-top: 10px;
+}
+
+/*.rightPart .profileDiv {
     width: 90%;
     margin-top: 10px;
     background-color: rgba(0, 0, 0, 0.1);
@@ -510,15 +655,15 @@ body {
     display: flex;
     justify-content: space-between;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    height: var(--TopBarSize);
 }
 
 .rightPart .profileDiv .profilePicDiv {
-    width: 30%;
-    height: 70px;
-    /*background-color: var(--background_Dark);*/
+    width: 60px;
+    height: var(--TopBarSize);
     background-image: url(https://www.w3schools.com/howto/img_avatar.png);
     border-radius: 100px;
-    margin: 10px;
+    margin: 5px;
     aspect-ratio: 1 / 1;
 }
 
@@ -546,7 +691,7 @@ body {
 
 .rightPart .profileDiv .profileTextDiv a:hover {
     background-color: var(--background_Dark);
-}
+}*/
 
 
 .rightPart .travaux {
