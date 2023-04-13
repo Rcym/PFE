@@ -25,7 +25,7 @@
 .mainWrapper {
     width: 100%;
     flex-grow: 1;
-    margin-top: 10px;
+    margin-top: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;

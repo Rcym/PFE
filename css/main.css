@@ -5,7 +5,7 @@
 body {
     margin: 0px;
     display: flex;
-    height: 100vh;
+    height: 100%;
 }
 
 :root {
@@ -22,20 +22,26 @@ body {
 
 .leftMenu {
     background-color: var(--background_Dark);
-    width: 20%;
+    min-width: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    transition: left 0.2s ease-in-out;
 }
 
 .leftMenu .titleDiv {
-    background-color: var(--background_Neutral);
+    /* background-color: var(--background_Neutral); */
+    background-color: rgba(255, 255, 255, 0.1);
     margin: 10px;
     width: 90%;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     height: var(--TopBarSize);
+    cursor: pointer;
 }
 
 .leftMenu .titleDiv h1 {
@@ -45,24 +51,61 @@ body {
 
 .leftMenu h3 {
     width: 90%;
-    color: white;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 14px;
+    margin: 25px 0px 0px 5px;
+}
+
+.leftMenu .moduleGeneral {
+    width: 90%;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+}
+
+.leftMenu .moduleGeneral:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.leftMenu .moduleGeneral p {
+    padding: 10px;
+    margin: 0px;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 600;
 }
 
 .leftMenu .moduleMenu {
     width: 90%;
+    max-height: 450px;
 }
 
 .leftMenu .moduleMenu .moduleElement {
-    background-color: var(--background_Neutral);
-    padding: 5px 5px;
-    border-radius: 5px;
+    padding: 10px;
     position: relative;
     margin-top: 5px;
+    margin: 0px;
+    cursor: pointer;
+}
+
+.leftMenu .moduleMenu .moduleElement:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.leftMenu .moduleMenu .moduleElement.selected_module{
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.leftMenu .moduleMenu .moduleElement.selected_module p{
+    color: white;
 }
 
 .leftMenu .moduleMenu .moduleElement p {
     margin: 0px;
     font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .leftMenu .moduleMenu .moduleElement .notifDiv {
@@ -71,9 +114,54 @@ body {
     height: 10px;
     border-radius: 10px;
     right: 10px;
-    top: 10px;
+    top: 14px;
     background-color: var(--background_Light);
 }
+
+.leftMenu .leftMenuInfoDiv {
+    width: 90%;
+    margin-top: auto;
+    margin-bottom: 5px;
+}
+
+.leftMenu .leftMenuInfoDiv p {
+    margin: 2px 4px 2px auto;
+    width: fit-content;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.leftMenu .leftMenuInfoDiv .parametresDiv  {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: var(--common_border_radius);
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.leftMenu .leftMenuInfoDiv .parametresDiv:hover {
+    background-color: rgba(0, 0, 0, 0.18);
+}
+
+.leftMenu .leftMenuInfoDiv .parametresDiv:hover img {
+    transform: rotate(45deg);
+}
+
+.leftMenu .leftMenuInfoDiv .parametresDiv h3 {
+    margin: 0px 0px 0px 10px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.leftMenu .leftMenuInfoDiv .parametresDiv img {
+    width: 40px;
+    height: 40px;
+    filter: invert(55%);
+    transition: transform 0.2s ease-in-out;
+}
+
+
 
 
 
@@ -91,17 +179,37 @@ body {
 
 .mainPart {
     background-color: var(--background_Light);
-    width: 60%;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
 
 .mainPart .Top {
     background-color: var(--background_Dark);
-    margin: 10px;
     border-radius: 10px;
     position: relative;
     height: var(--TopBarSize);
+    width: 98%;                     /* might change */
+    max-width: 1300px;                     /* might change */
+    align-self: center;                     /* might change */
+    margin: 10px;
+    display: flex;
+}
+
+.mainPart .Top .hamburgerMenu {
+    background-color: transparent;
+    border: none;
+    margin: 3px;
+    background-color: rgba(0, 0, 0, 0.1);
+    /* position: absolute;
+    top: -100px; */
+    display: none;
+}
+
+.mainPart .Top .hamburgerMenu img {
+    filter: invert(70%);
+    width: 40px;
+    padding: 5px;
 }
 
 .mainPart .Top h1 {
@@ -525,8 +633,9 @@ body {
 .profileDiv {
     position: relative;
     width: 300px;
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    /* background-color: var(--background_Dark); */
+    border-radius: var(--common_border_radius);
     display: flex;
     justify-content: space-between;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -540,9 +649,12 @@ body {
 .profileDiv .profilePicDiv {
     width: 60px;
     height: 60px;
-    background-image: url(https://www.w3schools.com/howto/img_avatar.png);
     border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
     margin: 5px;
+    filter: invert(50%);
+    box-sizing: border-box;
+    border: 2px solid grey;
     aspect-ratio: 1 / 1;
 }
 
@@ -554,15 +666,18 @@ body {
 }
 
 .profileDiv .profileTextDiv p {
-    margin: 0px 0px 1px 7px
+    margin: 0px 0px 1px 7px;
+    font-size: 14px;
 } 
 
 .profileDiv .profileTextDiv button {
     width: 80%;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.4);
     border: none;
     border-radius: var(--common_border_radius);
     padding: 2px 0px;
+    color: rgba(255, 255, 255, 0.0.2);
+    font-size: 11px;
 }
 
 .profileDiv .profileTextDiv button:hover {
@@ -636,7 +751,7 @@ body {
 
 .rightPart {
     background-color: var(--background_Light);
-    width: 20%;
+    min-width: 230px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -645,6 +760,8 @@ body {
 .rightPart .profileDiv {        /*   specific to right part   */
     width: 90%;
     margin-top: 10px;
+    /* background-color: var(--background_Dark);
+    color: white; */
 }
 
 /*.rightPart .profileDiv {
@@ -695,7 +812,7 @@ body {
 
 
 .rightPart .travaux {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.05);
     width: 90%;
     border-radius: 10px;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
@@ -707,7 +824,7 @@ body {
 }
 
 .rightPart .travaux .travauxElement {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.05);
     margin: 10px;
     border-radius: 10px;
 }
@@ -715,14 +832,450 @@ body {
 .rightPart .travaux .travauxElement h3 {
     padding: 10px 0px 0px 10px;
     margin: 0px;
+    font-size: 16px;
 }
 
 .rightPart .travaux .travauxElement p {
     padding: 0px 0px 10px 10px;
     margin: 0px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
 }
 
 
 
 
 
+
+
+
+.posts {
+    flex-grow: 1;
+    max-width: 1400px;
+    align-self: center;
+}
+
+.postElement {
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: var(--common_border_radius);
+}
+
+.postElement .postTop {
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+}
+
+.postElement .postTop .moduleTitleDiv {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: var(--common_border_radius);
+    width: max-content;
+    padding: 5px 10px;
+}
+
+.postElement .postTop .moduleTitleDiv h3 {
+    margin: 0px;
+}
+
+.postElement .postTop .moduleTitleDiv p {
+    margin: 0px;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+}
+
+.postElement .postTop .postTitle {
+    margin: 0px 0px 0px 15px;
+}
+
+
+.postElement .postCore {
+    /* background-color: rgba(0, 0, 0, 0.1); */
+    margin-top: 10px;
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 10px;
+}
+
+.postElement .postCore .postText {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: var(--common_border_radius);
+    flex-grow: 2;
+}
+
+.postElement .postCore .postPieceJointe {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: var(--common_border_radius);
+    flex-grow: 1;
+    min-width: 200px;
+}
+
+.postElement .postCore .postPieceJointe h4 {
+    margin: 10px;
+}
+
+.postElement .postCore .postPieceJointe .pieceJointeElement {
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 5px 6px;
+    border-radius: var(--common_border_radius);
+    display: flex;
+    align-items: center;
+}
+
+.postElement .postCore .postPieceJointe .pieceJointeElement .PJimg {
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    border-radius: var(--common_border_radius);
+}
+
+.postElement .postCore .postPieceJointe .pieceJointeElement p:first-child {
+    margin: 5px 5px 5px 0px;
+}
+
+.postElement .postCore .postPieceJointe .pieceJointeElement p:nth-child(2) {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    margin: 0px 0px 5px 0px;
+}
+
+
+.extendedPJ {
+    flex-wrap: wrap;
+}
+
+.postElement .extendedPJ .postPieceJointe {
+    /* height: 60px; */
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.postElement .extendedPJ .postPieceJointe h4 {
+    display: none;
+}
+
+.postElement .extendedPJ .postPieceJointe .pieceJointeElement {
+    width: 150px;
+    flex-grow: 1;
+}
+
+.postElement .extendedPJ .postPieceJointe .pieceJointeElement p:first-child {
+    font-size: 13px;
+}
+
+.postElement .extendedPJ .postPieceJointe .pieceJointeElement .PJimg {
+    height: 40px;
+    width: 40px;
+}
+
+
+
+
+.postBottomDiv {
+    /* margin: 10px 0px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.1); */
+    border-radius: var(--common_border_radius);
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.postBottomDiv button {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: var(--common_border_radius);
+    flex-grow: 1;
+    padding: 10px 10px;
+    border: none;
+    transition: 0.2s ease-in-out;
+}
+
+.postBottomDiv button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    flex-grow: 2;
+    color: white;
+}
+
+
+/* .SendBtn {
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 150px;
+    height: 60px;
+    border-radius: var(--common_border_radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.SendBtn h3 {
+    font-size: 14px;
+    width: 80%;
+}
+
+
+.postComment {
+    background-color: rgba(0, 0, 0, 0.1);
+    flex-grow: 2;
+    border-radius: var(--common_border_radius);
+} */
+
+
+
+
+
+
+
+
+
+/*  optionPost  */
+
+.optionPost {
+    margin: 8px 0px 30px 0px;
+    padding: 0px 10px;
+}
+
+.optionPost h2 {
+    margin: 20px 5px;
+}
+
+.categorieDiv {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.categorieDiv a {
+    background-color: rgba(0, 0, 0, 0.06);
+    flex-grow: 1;
+    border-radius: var(--common_border_radius);
+    padding: 0px 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.categorieDiv a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.categorieDiv a h3 {
+    margin: 10px 5px;
+    font-size: 22px;
+}
+
+.categorieDiv a p {
+    margin: 0px 0px 10px 5px;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+}
+
+.filterDiv {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.filterDiv h3 {
+    font-size: 16px;
+    margin: 10px;
+    font-weight: 100;
+    color: rgba(0, 0, 0, 0.6);
+    justify-self: flex-start;
+}
+
+.filterDiv button {
+    border: none;
+    background-color: rgba(0, 0, 0, 0.15);
+    color: rgba(0, 0, 0, 0.5);
+    margin: 5px;
+    padding: 0px 10px;
+    border-radius: var(--common_border_radius);
+    cursor: pointer;
+}
+
+.filterDiv button:hover {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.filterDiv .filterSelected {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background-color: rgba(0, 0, 0, 0.05);
+    color: black;
+}
+
+
+
+
+#popUpBackground {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*      responsive part      */
+/*      small screen      */
+
+@media only screen and (max-width: 1000px) {
+    .leftMenu {
+        position: absolute;
+        left: -300px;
+    }
+    
+    .categorieDiv a p {
+        display: none;
+    }
+    
+    .mainPart .Top .hamburgerMenu {
+        /* position: relative; */
+        display: block;
+    }
+    
+    .leftMenuVisible {
+        left: 0;
+        z-index: 10;
+        box-shadow: 5px 0px 500px rgba(0, 0, 0, 0.5);
+        position: fixed;
+    }
+    
+    #popUpBackground {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.4);
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        pointer-events: none;
+        display: none;
+    }
+
+    /* .leftMenuVisible::before {
+        content: '';
+        position: absolute;
+        width: 150vw;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.1);
+        z-index: -1;
+    } */
+    
+}
+
+
+
+/*      phone screen      */
+
+@media only screen and (max-width: 600px) {
+    .rightPart {
+        position: absolute;
+        left: -400px;          /* nrmlnm right part mais ... */
+    }
+
+    .postElement .postTop {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .postElement .postTop .postTitle {
+        margin: 10px 0px 5px 5px;
+    }
+    
+    .postElement .postCore {
+        flex-wrap: wrap;
+    }
+    
+    .postElement .postPieceJointe {
+        /* height: 60px; */
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    
+    .postElement .postPieceJointe h4 {
+        display: none;
+    }
+    
+    .postElement .postPieceJointe .pieceJointeElement {
+        width: 150px;
+        flex-grow: 1;
+    }
+    
+    .postElement .postPieceJointe .pieceJointeElement p:first-child {
+        font-size: 13px;
+    }
+    
+    .postElement .postPieceJointe .pieceJointeElement .PJimg {
+        height: 40px;
+        width: 40px;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DEBUG add post btn  
+
+.addPost {
+  position: fixed;
+  padding: 3px 13px;
+  border-radius: var(--common_border_radius);
+  font-size: 36px;
+  color: white;
+  background-color: var(--background_Dark);
+  right: 0;
+  bottom: 0;
+  margin: 10px;
+  border: none;
+}
+
+.addPost:hover {
+  transform: scale(1.1);
+} */

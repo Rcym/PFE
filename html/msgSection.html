@@ -5,13 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PFE | Messagerie</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <style>.mainPart {height: 100vh;}</style>
 </head>
 <body>
-    <div class="leftMenu">
+    <div id="leftMenu" class="leftMenu">
         <div class="titleDiv">
             <h1>GTR L3</h1>
         </div>
+
+        <div class="moduleElement moduleGeneral">
+            <p>General</p>
+            <div class="notifDiv"></div>
+        </div>
+
         <h3>Modules :</h3>
 
         <div class="moduleMenu">
@@ -25,7 +32,6 @@
             </div>
             <div class="moduleElement">
                 <p>SCAN</p>
-                <div class="notifDiv"></div>
             </div>
             <div class="moduleElement">
                 <p>SCAN</p>
@@ -33,12 +39,16 @@
             </div>
             <div class="moduleElement">
                 <p>SCAN</p>
-                <div class="notifDiv"></div>
             </div>
         </div>
 
-
-
+        <div class="leftMenuInfoDiv">
+            <div class="parametresDiv">
+                <img src="../assets/icons/Icon_gear.png" alt="">
+                <h3>Parametres</h3>
+            </div>
+            <p>Version 0.2</p>
+        </div>
 
     </div>
 
@@ -286,8 +296,8 @@
 
     </div>
 
-    <script src="msgPageAnimation.js" defer></script>
-    <script src="main.js" defer></script>
+    <script src="../JS_Front/msgPageAnimation.js" defer></script>
+    <script src="../JS_Front/main.js" defer></script>
 
 </body>
 </html>
