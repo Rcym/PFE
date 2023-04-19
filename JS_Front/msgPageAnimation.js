@@ -134,3 +134,11 @@ TPTDselectBtns.forEach(selectBtn => {
 
 
 
+// Contact Section M0BIL3
+
+const contactSection = document.getElementById("contactSection");
+const contactSectionBtn = document.getElementById("contactBtnToggleMenu");
+
+contactSectionBtn.addEventListener('click', () => {
+    contactSection.classList.toggle("contactSectionVisible")
+})

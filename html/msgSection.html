@@ -51,11 +51,14 @@
         </div>
 
     </div>
+    <div id="popUpBackground"></div>
 
 
 
     <div class="mainPart">
-        <div class="Top">
+        <div class="Top"> 
+            <button class="hamburgerMenu" onclick="toogleMenu()"><img id="imgBtnToogleMenu" src="../assets/icons/icon_hamburger.png" alt=""></button>
+            <button class="hamburgerMenu" onclick="toogleMenu()"><img id="contactBtnToggleMenu" src="../assets/icons/icon_hamburger.png" alt=""></button>
             <h1>Messagerie instantannée</h1>
             <!-- <div class="filtreDiv">
                 <p>Filtres : </p>
@@ -64,10 +67,11 @@
                 <button>TD</button>
                 <button>TP</button>
             </div> -->
+
         </div>
 
         <div class="msgSection">
-            <div class="contactSection">
+            <div id="contactSection" class="contactSection contactSectionVisible">
                 <div class="TPTDmoduleSection closed">
                     <h3>Module 1</h3>
                     <p class="arrow">V</p>
