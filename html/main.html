@@ -97,7 +97,36 @@
             </div>
 
 
-
+            <div class="postElement postElement_profSide">
+                <div class="postTop">
+                    <h3 class="postTitle">Objet : </h3>
+                    <input type="text" placeholder="Aa">
+                </div>
+    
+                <div class="postCore extendedPJ">
+                    <textarea id="" rows="8" placeholder="Aa"></textarea>
+    
+                    <div class="postPieceJointe">
+                        <h4>piéce jointes :</h4>
+                        <button>+</button>
+                        <div class="pieceJointeElement">
+                            <div class="PJimg"></div>
+                            <div class="PJtext">
+                                <p>Série TD1 RSF 2022</p>
+                                <p>2.2Mb</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="postBottomDiv">
+                    <button class="profSideOption">Commentairer (X)</button>
+                    <button class="profSideOption">Piéces jointes (V)</button>
+                    <button class="profSideOption">Travail a remettre (X)</button>
+                    <button class="profSideOption">Envoyer</button>
+                </div>
+    
+            </div>
 
             <div class="postElement">
                 <div class="postTop">
@@ -231,11 +260,14 @@
                 </div>
     
             </div>
+
+            
+            
         </div>
     </div>
-
-
-
+    
+    
+    
     <div class="rightPart">
         <div class="profileDiv">
             <img class="profilePicDiv" src="../assets/icons/default_user.png"></img>
@@ -262,6 +294,40 @@
             </div>
         </div>
 
+    </div>
+    
+    <div class="commentPopUp" id="commentSectionDiv">
+        <div class="commentTop">
+            <h3>Série d'exercices a préparer</h3>
+            <button onclick="hideCommentSection()">X</button>
+        </div>
+        <div class="comments">
+            <div class="commentElement">
+                <div class="commenterImg"></div>
+                <div class="commenterComment">
+                    <h3>Etudiant Etudiant</h3>
+                    <p>bla bla bla bla bla bla bla bla bla bla </p>
+                </div>
+            </div>
+            <div class="commentElement">
+                <div class="commenterImg"></div>
+                <div class="commenterComment">
+                    <h3>Etudiant Etudiant</h3>
+                    <p>bla bla bla bla bla bla bla bla bla bla </p>
+                </div>
+            </div>
+            <div class="commentElement">
+                <div class="commenterImg"></div>
+                <div class="commenterComment">
+                    <h3>Etudiant Etudiant</h3>
+                    <p>bla bla bla bla bla bla bla bla bla bla </p>
+                </div>
+            </div>
+        </div>
+        <div class="commentWritingSection">
+            <textarea name="commentWritingSection" id="commentWritingSection" cols="30" rows="1"></textarea>
+            <button onclick="addComment('bzzz','bzz')">></button>
+        </div>
     </div>
 </body>
 </html>

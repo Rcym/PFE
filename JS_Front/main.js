@@ -23,9 +23,11 @@ modulesBtns.forEach(moduleBtn => {
 
 
 
-const popUpBackground = document.getElementById("popUpBackground");
+// Toggle Background
+
 const leftMenu = document.getElementById('leftMenu');
 const imgBtnToogleMenu = document.getElementById('imgBtnToogleMenu');
+// const popUpBackground = document.getElementById("popUpBackground");
 
 function toggleBackground(isBackgroundShown) {
     // isShown = true => remove background
@@ -37,7 +39,13 @@ function toggleBackground(isBackgroundShown) {
         popUpBackground.style.display = "block";
         popUpBackground.style.pointerEvents = "all";
     }
-}
+};
+
+// export { toggleBackground }
+
+
+
+// Toggle Menu
 
 function toogleMenu() {
     if (leftMenu.classList.contains('leftMenuVisible')) {
