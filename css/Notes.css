@@ -4,16 +4,36 @@
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: flex-start; */
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: calc(100% - 20px);
+    margin-left: 10px;
+    height: 100%;
+    flex-direction: row;
+    align-content: flex-start;
+    justify-items: flex-start;
+    overflow-y: auto;
 }
 
+.mainWrapper ::-webkit-scrollbar {
+    width: 5px;
+}
+
+.mainWrapper ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
 .moduleNoteElement {
+    position: relative;
     background-color: rgba(0, 0, 0, 0.1);
-    max-width: 850px;
     display: flex;
-    margin: 10px;
     border-radius: var(--common_border_radius);
     overflow: hidden;
+    margin: 0px;
+    flex-grow: 1;
+    max-width: 500px;
+    /* margin: 10px; */
 }
 
 
@@ -23,7 +43,7 @@
 
 
 .moduleNoteMain {
-    flex-grow: 1;
+    flex-grow: 2;
     position: relative;
 }
 
@@ -66,7 +86,7 @@
     font-size: 12px;
 }
 .moduleNoteMain .noteElement p:nth-child(4) {
-    margin: 0px 0px 0px 20px;
+    margin: 0px 10px 0px 10px;
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 2px 10px;
@@ -110,7 +130,8 @@
 
 
 .moduleNoteSide {
-    width: 200px;
+    /* width: 160px; */
+    flex-grow: 1;
     border-left: 1px solid white;
     display: flex;
     flex-direction: column;
@@ -138,4 +159,31 @@
 
 .moduleNoteSide button:hover {
     background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
+@media only screen and (max-width: 650px) {
+    .moduleNoteElement {
+        flex-direction: column;
+    }
+    
+    .moduleNoteElement .moduleNoteSide {
+        flex-direction: row;
+    }
+
+    .moduleNoteElement button {
+        width: fit-content;
+        flex-grow: 1;
+        margin: 0px 5px 5px 5px;
+    }
+
+    .moduleNoteSide p {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+    }
 }

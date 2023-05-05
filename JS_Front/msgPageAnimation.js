@@ -102,17 +102,17 @@ sendBtn.addEventListener("click", () => {
     document.getElementById("textEntry").value = null
 })
 
-const PJbtn = document.getElementById("PJbtn")
-PJbtn.addEventListener("click", () => {
-    // getting the test to write
-    let textEntry = document.getElementById("textEntry").value
-    if (textEntry == "") {return}
+// const PJbtn = document.getElementById("PJbtn")
+// PJbtn.addEventListener("click", () => {
+//     // getting the test to write
+//     let textEntry = document.getElementById("textEntry").value
+//     if (textEntry == "") {return}
 
-    writeMsg(textEntry, 1)
+//     writeMsg(textEntry, 1)
 
-    // suprimer le text écrit
-    document.getElementById("textEntry").value = null
-})
+//     // suprimer le text écrit
+//     document.getElementById("textEntry").value = null
+// })
 
 
 

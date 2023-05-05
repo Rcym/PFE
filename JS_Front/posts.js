@@ -111,3 +111,33 @@ function togglePieceJointes() {
 
 profSideOptionBtns[1].addEventListener('click', togglePieceJointes)
 
+
+
+
+
+
+// Drive, messagerie, Notes btns changing place when scroll
+const optionPosts = document.querySelector('.categorieDiv');
+const optionPostsHTML = optionPosts.innerHTML;
+
+function isVisible(element) {
+    let bordures = element.getBoundingClientRect();
+    return(bordures.bottom > 0)
+}
+
+var optionDivVisible = true;
+const rightOptionPosts = document.querySelector('.rightPart .categorieDiv');
+console.log(rightOptionPosts);
+
+document.addEventListener('scroll', () => {
+    optionDivVisibleOLD = optionDivVisible
+    optionDivVisible = isVisible(optionPosts)
+    
+    if (optionDivVisible != optionDivVisibleOLD) {
+        if (optionDivVisible) {
+            rightOptionPosts.classList.remove('visibleCategorieDiv')
+        } else {
+            rightOptionPosts.classList.add('visibleCategorieDiv')
+        }
+    }
+})

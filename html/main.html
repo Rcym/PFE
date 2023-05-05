@@ -44,7 +44,7 @@
         </div>
 
         <div class="leftMenuInfoDiv">
-            <div class="parametresDiv">
+            <div class="parametresDiv" id="parametresDiv">
                 <img src="../assets/icons/Icon_gear.png" alt="">
                 <h3>Parametres</h3>
             </div>
@@ -54,26 +54,16 @@
     </div>
 
 
+    <div id="popUpBackground"></div>
 
     <div class="mainPart">
         <div class="Top">
             <button class="hamburgerMenu" onclick="toogleMenu()"><img id="imgBtnToogleMenu" src="../assets/icons/icon_hamburger.png" alt=""></button>
             <h1>Actualité SCAN</h1>
-            <!-- <div class="filtreDiv">
-                <p>Filtres : </p>
-                <button>General</button>
-                <button>Cours</button>
-                <button>TD</button>
-                <button>TP</button>
-            </div> -->
         </div>
-        
-        <div id="popUpBackground"></div>
-        <!-- <button class="addPost">+</button> -->
 
         <div class="posts">
             <div class="optionPost">
-                <!-- <h2>Scan</h2> -->
                 <div class="categorieDiv">
                     <a href="">
                         <h3>Drive</h3>
@@ -294,6 +284,18 @@
             </div>
         </div>
 
+        <div class="categorieDiv visibleCategorieDiv">
+            <a href="">
+                <h3>Drive</h3>
+            </a>
+            <a href="">
+                <h3>Notes</h3>
+            </a>
+            <a href="">
+                <h3>Messagerie</h3>
+            </a>
+        </div>
+
     </div>
     
     <div class="commentPopUp" id="commentSectionDiv">
@@ -329,5 +331,7 @@
             <button onclick="addComment('bzzz','bzz')">></button>
         </div>
     </div>
+
+   
 </body>
 </html>
