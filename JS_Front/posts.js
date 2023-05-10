@@ -127,7 +127,6 @@ function isVisible(element) {
 
 var optionDivVisible = true;
 const rightOptionPosts = document.querySelector('.rightPart .categorieDiv');
-console.log(rightOptionPosts);
 
 document.addEventListener('scroll', () => {
     optionDivVisibleOLD = optionDivVisible

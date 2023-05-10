@@ -167,22 +167,56 @@ async function hideParametres() {
     toggleBackground(true);
 }
 
+var cssRoot = document.querySelector(':root');
+
 function selectTheme(themeIndex) {
     // changement sur l'interface
     let themeBtns = document.querySelectorAll('.themeBtn');
-    console.log(themeBtns);
     themeBtns.forEach(element => {
         element.classList.remove('selectedTheme');
     })
     themeBtns[themeIndex].classList.add('selectedTheme');
 
     // changement theme
-    // ...
+    if (themeIndex == 0) {
+        cssRoot.style.setProperty('--background_Light', '#434656');
+        cssRoot.style.setProperty('--LeftMenuBackground', '#505366');
+        cssRoot.style.setProperty('--Top', 'var(--accent_Light)');
+
+        cssRoot.style.setProperty("--textColorPureWhite", 'black');
+        cssRoot.style.setProperty("--textColorPureBlack", 'white');
+        cssRoot.style.setProperty("--textColorBlack", 'white');
+        cssRoot.style.setProperty("--textColorWhite", '#2f3854');
+        cssRoot.style.setProperty("--textColorMidWhite", 'rgba(0, 0 ,0 ,0.5)');
+        cssRoot.style.setProperty("--textColorMidBlack", 'rgba(255, 255 ,255 ,0.5)');
+
+        cssRoot.style.setProperty("--NeutralBackground", 'rgba(131, 156, 236, 0.3)');
+        cssRoot.style.setProperty("--neutralBackground_ontTOP", 'rgba(255, 255 ,255 ,0.1)');
+
+        cssRoot.style.setProperty("--important", 'var(--accent_Lighter)');
+        cssRoot.style.setProperty("--important_Low", 'var(--accent_Lighter_05)');
+        
+    } else if (themeIndex == 1) {
+        cssRoot.style.setProperty('--background_Light', 'rgb(241, 241, 241)');
+        cssRoot.style.setProperty('--LeftMenuBackground', '#434656');
+        cssRoot.style.setProperty('--Top', 'var(--LeftMenuBackground)');
+
+        cssRoot.style.setProperty("--textColorPureWhite", 'white');
+        cssRoot.style.setProperty("--textColorPureBlack", 'black');
+        cssRoot.style.setProperty("--textColorBlack", '#2f3854');
+        cssRoot.style.setProperty("--textColorWhite", 'white');
+        cssRoot.style.setProperty("--textColorMidWhite", 'rgba(255, 255 ,255 ,0.5)');
+        cssRoot.style.setProperty("--textColorMidBlack", 'rgba(0, 0 ,0 ,0.5)');
+
+        cssRoot.style.setProperty("--NeutralBackground", 'var(--accent_Lighter_015)');
+        cssRoot.style.setProperty("--neutralBackground_ontTOP", 'var(--accent_Light_01)');
+
+        cssRoot.style.setProperty("--important", 'var(--accent_Light)');
+        cssRoot.style.setProperty("--important_Low", 'var(--accent_Light_05)');
+    }
 }
 
-var cssRoot = document.querySelector(':root');
 function updateBorderRadius(e) {
-    console.log(e.target.value);
     cssRoot.style.setProperty('--common_border_radius', e.target.value + "px");
 }
 
